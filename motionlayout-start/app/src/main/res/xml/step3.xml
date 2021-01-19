@@ -19,15 +19,23 @@
              xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- A transition describes an animation via start and end state -->
     <Transition
-            app:constraintSetStart="@+id/start"
-            app:constraintSetEnd="@+id/end"
-            app:duration="3000">
-        <OnClick
-                app:targetId="@id/moon"
-                app:clickAction="toggle"
-        />
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="3000">
 
-        <!-- TODO: Add KeyFrameSet and KeyPosition -->
+        <OnClick
+            app:targetId="@id/moon"
+            app:clickAction="toggle"
+            />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="50"
+                app:motionTarget="@id/moon"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.5"
+                />
+        </KeyFrameSet>
     </Transition>
 
     <!-- Constraints to apply at the start of the animation -->
